@@ -22,7 +22,7 @@ class JobAdvertSeeder extends Seeder
                 'category' => 'IT',
                 'company' => 'Tech Solutions',
                 'salary' => '50000',
-                'currency' => CurrencyEnum::Dollar,
+                'currency' => CurrencyEnum::US_Dollar,
                 'created_at' => '2023-09-01 10:00:00',
             ],
             [
@@ -32,7 +32,7 @@ class JobAdvertSeeder extends Seeder
                 'category' => 'IT',
                 'company' => 'Creative Minds',
                 'salary' => '60000',
-                'currency' => CurrencyEnum::Dollar,
+                'currency' => CurrencyEnum::US_Dollar,
                 'created_at' => '2023-09-05 15:30:00',
             ],
             [
@@ -42,7 +42,7 @@ class JobAdvertSeeder extends Seeder
                 'category' => 'Marketing',
                 'company' => 'Brand Hub',
                 'salary' => '80000',
-                'currency' => CurrencyEnum::Dollar,
+                'currency' => CurrencyEnum::US_Dollar,
                 'created_at' => '2023-08-28 09:45:00',
             ],
             [
@@ -52,7 +52,7 @@ class JobAdvertSeeder extends Seeder
                 'category' => 'Data Science',
                 'company' => 'DataWorks',
                 'salary' => '120000',
-                'currency' => CurrencyEnum::Dollar,
+                'currency' => CurrencyEnum::US_Dollar,
                 'created_at' => '2023-08-20 08:20:00',
             ],
             [
@@ -62,7 +62,7 @@ class JobAdvertSeeder extends Seeder
                 'category' => 'Sales',
                 'company' => 'Salesify',
                 'salary' => '70000',
-                'currency' => CurrencyEnum::Dollar,
+                'currency' => CurrencyEnum::US_Dollar,
                 'created_at' => '2023-09-10 11:00:00',
             ],
             [
@@ -72,7 +72,7 @@ class JobAdvertSeeder extends Seeder
                 'category' => 'Human Resources',
                 'company' => 'People First',
                 'salary' => '65000',
-                'currency' => CurrencyEnum::Dollar,
+                'currency' => CurrencyEnum::US_Dollar,
                 'created_at' => '2023-09-12 12:30:00',
             ],
             [
@@ -82,7 +82,7 @@ class JobAdvertSeeder extends Seeder
                 'category' => 'Product Management',
                 'company' => 'Innovatech',
                 'salary' => '90000',
-                'currency' => CurrencyEnum::Dollar,
+                'currency' => CurrencyEnum::US_Dollar,
                 'created_at' => '2023-09-03 14:10:00',
             ],
             [
@@ -92,7 +92,7 @@ class JobAdvertSeeder extends Seeder
                 'category' => 'Design',
                 'company' => 'Design Studio',
                 'salary' => '55000',
-                'currency' => CurrencyEnum::Dollar,
+                'currency' => CurrencyEnum::US_Dollar,
                 'created_at' => '2023-09-07 16:00:00',
             ],
             [
@@ -102,7 +102,7 @@ class JobAdvertSeeder extends Seeder
                 'category' => 'IT',
                 'company' => 'Secure Networks',
                 'salary' => '75000',
-                'currency' => CurrencyEnum::Dollar,
+                'currency' => CurrencyEnum::US_Dollar,
                 'created_at' => '2023-09-14 09:15:00',
             ],
             [
@@ -112,7 +112,7 @@ class JobAdvertSeeder extends Seeder
                 'category' => 'Business Analysis',
                 'company' => 'BizAnalyze',
                 'salary' => '85000',
-                'currency' => CurrencyEnum::Dollar,
+                'currency' => CurrencyEnum::US_Dollar,
                 'created_at' => '2023-09-11 13:50:00',
             ],
         ];

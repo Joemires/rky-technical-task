@@ -3,5 +3,6 @@ namespace App\Enums;
 
 enum CurrencyEnum: string
 {
-    case Dollar = 'USD';
+    case US_Dollar = 'USD';
+    case NGN_Naira = 'NGN';
 }

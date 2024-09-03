@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Enums\CurrencyEnum;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -15,7 +16,7 @@ class JobAdvert extends Model
      * @var array
      */
     protected $attributes = [
-        'currency' => \App\Enums\CurrencyEnum::Dollar
+        'currency' => CurrencyEnum::US_Dollar
     ];
 
     /**
@@ -26,7 +27,7 @@ class JobAdvert extends Model
     protected function casts(): array
     {
         return [
-            'currency' => \App\Enums\CurrencyEnum::class
+            'currency' => CurrencyEnum::class
         ];
     }
 }
