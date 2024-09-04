@@ -6,9 +6,9 @@ use App\Enums\CurrencyEnum;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Job>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\JobListing>
  */
-class JobAdvertFactory extends Factory
+class JobListingFactory extends Factory
 {
     /**
      * Define the model's default state.

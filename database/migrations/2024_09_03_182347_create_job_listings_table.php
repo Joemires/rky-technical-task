@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('job_adverts', function (Blueprint $table) {
+        Schema::create('job_listings', function (Blueprint $table) {
             $table->id();
             $table->string('title');
             $table->longText('description');
@@ -22,7 +22,7 @@ return new class extends Migration
             $table->char('currency');
             $table->timestamps();
 
-            $table->index(['title', 'location', 'category', 'company', 'salary', 'created_at']);
+            $table->index(['title', 'location', 'category', 'company', 'salary', 'currency', 'created_at']);
         });
     }
 

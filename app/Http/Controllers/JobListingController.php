@@ -2,17 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\JobAdvert;
+use App\Models\JobListing;
 use Illuminate\Http\Request;
 
-class JobAdvertController extends Controller
+class JobListingController extends Controller
 {
     /**
      * Handle the incoming request.
      */
     public function __invoke(Request $request)
     {
-        $query = JobAdvert::query()
+        $query = JobListing::query()
             ->when($request->title, fn ($query, $search) =>
                 $query->where('title', 'like', '%' . $search . '%')
             )

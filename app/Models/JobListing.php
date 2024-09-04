@@ -6,7 +6,7 @@ use App\Enums\CurrencyEnum;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class JobAdvert extends Model
+class JobListing extends Model
 {
     use HasFactory;
 

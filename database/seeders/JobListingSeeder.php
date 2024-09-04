@@ -7,7 +7,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class JobAdvertSeeder extends Seeder
+class JobListingSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -16,13 +16,63 @@ class JobAdvertSeeder extends Seeder
     {
         $jobs = [
             [
+                'title' => 'Software Engineer',
+                'description' => 'Develop and maintain software applications',
+                'location' => 'Lagos',
+                'category' => 'IT',
+                'company' => 'TechCo',
+                'salary' => '500000',
+                'currency' => CurrencyEnum::NGN_Naira,
+                'created_at' => '2023-09-01 10:00:00',
+            ],
+            [
+                'title' => 'Marketing Manager',
+                'description' => 'Plan and execute marketing campaigns',
+                'location' => 'Abuja',
+                'category' => 'Marketing',
+                'company' => 'AdvertCo',
+                'salary' => '400000',
+                'currency' => CurrencyEnum::NGN_Naira,
+                'created_at' => '2023-09-01 10:00:00',
+            ],
+            [
+                'title' => 'Data Scientist',
+                'description' => 'Analyze and interpret complex data',
+                'location' => 'Remote',
+                'category' => 'Data Science',
+                'company' => 'DataCorp',
+                'salary' => '600000',
+                'currency' => CurrencyEnum::NGN_Naira,
+                'created_at' => '2023-09-01 10:00:00',
+            ],
+            [
+                'title' => 'Web Developer',
+                'description' => 'Build and maintain websites',
+                'location' => 'Lagos',
+                'category' => 'IT',
+                'company' => 'WebMasters',
+                'salary' => '450000',
+                'currency' => CurrencyEnum::NGN_Naira,
+                'created_at' => '2023-09-01 10:00:00',
+            ],
+            [
+                'title' => 'Sales Representative',
+                'description' => 'Generate leads and close sales',
+                'location' => 'Port Harcourt',
+                'category' => 'Sales',
+                'company' => 'SalesGen',
+                'salary' => '250000',
+                'currency' => CurrencyEnum::NGN_Naira,
+                'created_at' => '2023-09-01 10:00:00',
+            ],
+            [
                 'title' => 'PHP Developer',
                 'description' => 'Looking for an experienced PHP Developer to join our dynamic team. Must have experience with Laravel and MySQL.',
                 'location' => 'Lagos',
                 'category' => 'IT',
                 'company' => 'Tech Solutions',
-                'salary' => '50000',
-                'currency' => CurrencyEnum::US_Dollar,
+                'salary' => '700000',
+                'currency' => CurrencyEnum::NGN_Naira,
                 'created_at' => '2023-09-01 10:00:00',
             ],
             [
@@ -117,6 +167,6 @@ class JobAdvertSeeder extends Seeder
             ],
         ];
 
-        DB::table('job_adverts')->insert(values: $jobs);
+        DB::table('job_listings')->insert(values: $jobs);
     }
 }
