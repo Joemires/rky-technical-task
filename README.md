@@ -1,66 +1,152 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Job Listings API and Frontend
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+This repository contains a simple Laravel 11 application that provides a job listings API endpoint and a basic frontend to interact with it. The application allows users to filter job listings based on criteria such as job title, location, and category.
 
-## About Laravel
+## Features
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- **API Endpoint**: `/api/jobs` - Retrieve job listings with optional filters (e.g., `?title=developer&location=lagos&category=it`).
+- **Frontend**: `/` - A basic HTML form to interact with the API, allowing users to search and view job listings.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Requirements
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- PHP 8.1 or higher
+- Composer
+- SQLite (default database) or any laravel compatible database
 
-## Learning Laravel
+## Installation
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+#### **Clone the Repository**
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+```bash
+git clone https://github.com/joemires/rky-technical-task.git
+cd rky-technical-task
+```
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+#### **Install Dependencies**
 
-## Laravel Sponsors
+```bash
+composer update
+```
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+#### **Configure Environment**
 
-### Premium Partners
+Let setup laravel Environment
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+- Copy Environment configuration
 
-## Contributing
+    ```bash
+    cp .env.example .env
+    ```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+- Generate laravel encryption key
 
-## Code of Conduct
+    ```bash
+    php artisan key:generate
+    ```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+#### **Set Up the Database**
 
-## Security Vulnerabilities
+The application uses an SQLite database by default but you can setup something different, check from the document on how set that up https://laravel.com/docs/11.x/installation#databases-and-migrations.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+- Create an empty SQLite database file:
+
+    ```bash
+    touch database/database.sqlite
+    ```
+
+- Run the migrations and seed the database:
+
+    ```bash
+    php artisan migrate --seed
+    ```
+    you can as well leverage on the factory method I created to utilize advance dataset seeding
+
+    ```bash
+    php artisan tinker
+    ```
+
+    ```php
+    App\Models\JobListing::factory(100)->create()
+    ```
+    You can replace the 100 with any amount of data you want to generate
+
+#### **Serve the Application**
+
+You can serve the application using Laravel's built-in development server:
+
+```bash
+php artisan serve
+```
+
+The application should now be available at `http://localhost:8000`.
+
+## API Endpoint
+
+The API provides job listings with the following optional filters:
+
+- `title`: Filter by job title
+- `location`: Filter by job location
+- `category`: Filter by job category
+
+#### **Example Request**
+
+```
+GET /api/jobs?title=developer&location=lagos&category=it
+```
+
+#### **Example Response**
+
+```json
+{
+    "current_page": 1,
+    "data": [
+        {
+            "id": 1,
+            "title": "PHP Developer",
+            "description": "Looking for an experienced PHP Developer to join our dynamic team. Must have experience with Laravel and MySQL.",
+            "location": "Lagos",
+            "category": "IT",
+            "company": "Tech Solutions",
+            "salary": "50000",
+            "currency": "NGN",
+            "created_at": "2024-09-01T12:00:00.000000Z",
+            "updated_at": "2024-09-01T12:00:00.000000Z"
+        },
+        ...
+    ],
+    "first_page_url": "http://localhost:8000/api/jobs?page=1",
+    "from": 1,
+    "last_page": 2,
+    "last_page_url": "http://localhost:8000/api/jobs?page=2",
+    "links": [
+        {
+            "url": null,
+            "label": "&laquo; Previous",
+            "active": false
+        },
+        ...
+    ],
+    "next_page_url": "http://localhost:8000/api/jobs?page=2",
+    "path": "http://localhost:8000/api/jobs",
+    "per_page": 15,
+    "prev_page_url": null,
+    "to": 15,
+    "total": 20
+}
+```
+
+## Frontend
+
+The frontend is accessible at the root URL `/` and provides a simple HTML form where users can enter filter criteria and view the job listings returned by the API.
+
+## Pagination
+
+If there are too many job listings, the API supports pagination. You can control the number of items per page with the `?per_page=10` parameter and also move between pages using `?page=1` query parameter.
+
+## Error Handling
+
+The API provides appropriate HTTP status codes and error messages for invalid requests.
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+This project is open-source and available under the [MIT License](LICENSE).
